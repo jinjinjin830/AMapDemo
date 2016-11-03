@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'One'
+            keyPassword '123456'
+            storeFile file('D:/zxOne.jks')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.example.auser.amapdemo"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+//
+//    sigingConfigs {
+//        debug {
+//            storeFile file(demo.jks)
+//            storePassword '123456'
+//            keyAlias 'test01'
+//            keyPassword '123456'
+//        }
+//    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/Amap_2DMap_V2.9.1_20160825.jar')
+    compile files('libs/AMap_Location_V2.4.1_20160414.jar')
+    compile files('libs/AMap_Search_V3.5.0_20160927.jar')
+    compile files('libs/Volley.jar')
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
+}
