@@ -9,7 +9,7 @@ import com.example.auser.amapdemo.R;
  * Created by Auser on 2016/10/28.
  */
 
-public class B_MaterialDesign extends Activity {
+public class B_ScrollView_Parallax extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

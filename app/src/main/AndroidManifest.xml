@@ -41,11 +41,13 @@
             android:name=".ui.A_AMap"
             android:label="高德地图页面"/>
         <activity
-            android:name=".ui.B_MaterialDesign"
+            android:name=".ui.B_ScrollView_Parallax"
             android:label="ScrollView的视差效果"/>
         <activity
             android:name=".ui.C_ListView_Parallax"
             android:label="ListView的视差效果"/>
+        <activity android:name=".ui.D_ProgressDemo"
+            android:label="仿QQ上传图片的进度效果"/>
 
 
         <service android:name="com.amap.api.location.APSService"></service>

@@ -59,7 +59,6 @@ public class MyScrollView extends ScrollView {
                 ivHeader.setLayoutParams(param);
             }
         }
-
         return super.overScrollBy(deltaX, deltaY, scrollX, scrollY,
                 scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollY,
                 isTouchEvent);
@@ -93,7 +92,10 @@ public class MyScrollView extends ScrollView {
         return super.onTouchEvent(ev);
     }
 
+    public boolean a() {
 
+        return 0==0?true:false;
+    }
     /**
      * 还原头部高度
      */

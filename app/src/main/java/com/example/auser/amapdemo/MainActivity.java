@@ -10,8 +10,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.auser.amapdemo.ui.A_AMap;
-import com.example.auser.amapdemo.ui.B_MaterialDesign;
+import com.example.auser.amapdemo.ui.B_ScrollView_Parallax;
 import com.example.auser.amapdemo.ui.C_ListView_Parallax;
+import com.example.auser.amapdemo.ui.D_ProgressDemo;
 import com.example.auser.amapdemo.view.MyListView;
 
 /**
@@ -49,6 +50,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
         Button btnThree = (Button) findViewById(R.id.btn_three);
         btnThree.setOnClickListener(this);
 
+        Button btn4 = (Button) findViewById(R.id.btn_four);
+        btn4.setOnClickListener(this);
+
     }
 
 //    private void initView() {
@@ -79,12 +83,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btn_material :
 //                initMaterial();
-                Intent intent2 = new Intent(this,B_MaterialDesign.class);
+                Intent intent2 = new Intent(this,B_ScrollView_Parallax.class);
                 startActivity(intent2);
                 break;
             case R.id.btn_three:
                 Intent intent3 = new Intent(this, C_ListView_Parallax.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn_four:
+                Intent intent4 = new Intent(this, D_ProgressDemo.class);
+                startActivity(intent4);
                 break;
         }
     }
