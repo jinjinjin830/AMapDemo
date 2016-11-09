@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'One'
             keyPassword '123456'
-            storeFile file('D:/zxOne.jks')
+            storeFile file('./signing/zxOne.jks')
             storePassword '123456'
         }
     }
