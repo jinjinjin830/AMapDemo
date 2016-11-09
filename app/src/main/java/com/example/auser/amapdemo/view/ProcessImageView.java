@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * Created by Administrator on 2016/11/9.
+ * Created by lce on 2016/11/9.
  */
 
 public class ProcessImageView extends ImageView {
@@ -44,6 +44,29 @@ public class ProcessImageView extends ImageView {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.parseColor("#70000000"));// 半透明
 
+        funtion1(canvas);
+
+
+        mPaint.setAntiAlias(true); // 去锯齿
+        mPaint.setTextSize(30);//画笔大小
+        mPaint.setColor(Color.parseColor("#FFFFFF"));//画笔颜色
+        mPaint.setStrokeWidth(2);//画笔宽度
+
+        Rect rect = new Rect();
+        mPaint.getTextBounds("100%", 0, "100%".length(), rect);// 确定文字的宽度
+
+        canvas.drawText(
+                progress + "%",
+                getWidth() / 2 - rect.width() / 2,
+                getHeight() / 2,
+                mPaint);
+    }
+
+    /**
+     * 绘制遮罩层,从左下角开始,根据进度,遮罩到右上角(全部遮罩)
+     * @param canvas
+     */
+    private void funtion1(Canvas canvas) {
         //定义一个Path对象,封闭成一个三角形
         Path path1 = new Path();
         if(progress<=50) {
@@ -56,6 +79,7 @@ public class ProcessImageView extends ImageView {
         }
 
         if(progress > 50) {
+            //当进度大于50%的时候,让三角形一直显示
             mPaint.setAntiAlias(false); // 取消消除锯齿,否则会有一条线出现.
             Path path2 = new Path();
             path2.moveTo(0, getHeight());
@@ -73,20 +97,6 @@ public class ProcessImageView extends ImageView {
             path3.close();
             canvas.drawPath(path3,mPaint);
         }
-
-        mPaint.setAntiAlias(true); // 消除锯齿
-        mPaint.setTextSize(30);//画笔大小
-        mPaint.setColor(Color.parseColor("#FFFFFF"));//画笔颜色
-        mPaint.setStrokeWidth(2);//画笔宽度
-
-        Rect rect = new Rect();
-        mPaint.getTextBounds("100%", 0, "100%".length(), rect);// 确定文字的宽度
-
-        canvas.drawText(
-                progress + "%",
-                getWidth() / 2 - rect.width() / 2,
-                getHeight() / 2,
-                mPaint);
     }
 
     public void setProgress(int progress) {

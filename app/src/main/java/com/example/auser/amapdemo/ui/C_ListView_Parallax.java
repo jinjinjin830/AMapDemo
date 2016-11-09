@@ -1,14 +1,17 @@
 package com.example.auser.amapdemo.ui;
 
-import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import com.example.auser.amapdemo.Constant;
-import com.example.auser.amapdemo.view.MyListView;
 import com.example.auser.amapdemo.R;
+import com.example.auser.amapdemo.view.MyListView;
 
 import java.util.Arrays;
 
@@ -16,7 +19,7 @@ import java.util.Arrays;
  * Created by Auser on 2016/10/30.
  */
 
-public class C_ListView_Parallax extends Activity{
+public class C_ListView_Parallax extends AppCompatActivity{
     private MyListView listView;
 
 
@@ -25,6 +28,12 @@ public class C_ListView_Parallax extends Activity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.c_layout_listview);
+
+        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null && Build.VERSION.SDK_INT >= 14) {
+            parentView.setFitsSystemWindows(true);
+        }
 
         final View header = View.inflate(this, R.layout.c_list_header, null);
         final ImageView ivHeader = (ImageView) header.findViewById(R.id.iv_header);

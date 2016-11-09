@@ -13,7 +13,7 @@ android {
     buildToolsVersion "23.0.1"
     defaultConfig {
         applicationId "com.example.auser.amapdemo"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
