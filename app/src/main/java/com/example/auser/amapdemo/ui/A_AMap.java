@@ -13,7 +13,7 @@ import com.amap.api.maps2d.MapView;
 import com.example.auser.amapdemo.R;
 
 /**
- * Created by Auser on 2016/10/28.
+ * Created by Zx on 2016/10/28.
  */
 
 public class A_AMap extends Activity {

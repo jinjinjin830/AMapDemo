@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.example.auser.amapdemo.R;
 
 /**
- * Created by Auser on 2016/10/28.
+ * Created by Zx on 2016/10/28.
  */
 
 public class B_ScrollView_Parallax extends Activity {

@@ -10,7 +10,7 @@ import com.example.auser.amapdemo.R;
 import com.example.auser.amapdemo.view.ProcessImageView;
 
 /**
- * Created by Administrator on 2016/11/9.
+ * Created by Zx on 2016/11/9.
  */
 
 public class D_ProgressDemo extends Activity{

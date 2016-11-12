@@ -53,6 +53,8 @@
         <activity android:name=".ui.D_ProgressDemo"
         android:theme="@style/ColorTranslucentTheme"
         android:label="仿QQ上传图片的进度效果"/>
+        <activity android:name=".ui.E_RecyclerView_Stickiness"
+            android:label="RecyclerView与粘性控件"/>
 
 
         <service android:name="com.amap.api.location.APSService"></service>

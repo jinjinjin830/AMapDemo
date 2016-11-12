@@ -4,16 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 
 import com.example.auser.amapdemo.ui.A_AMap;
 import com.example.auser.amapdemo.ui.B_ScrollView_Parallax;
 import com.example.auser.amapdemo.ui.C_ListView_Parallax;
 import com.example.auser.amapdemo.ui.D_ProgressDemo;
-import com.example.auser.amapdemo.view.MyListView;
+import com.example.auser.amapdemo.ui.E_RecyclerView_Stickiness;
 
 /**
  * 实现思路:
@@ -23,55 +20,32 @@ import com.example.auser.amapdemo.view.MyListView;
  */
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    MyListView listView;
-
-    private int curScrollDist;
-
-    private RelativeLayout.LayoutParams relaParams;
-    private View headerLayout;
-    private ImageView ivHeader;
-    private View mRealView;
-    private FrameLayout mFrameLayout;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ViewGroup view = (ViewGroup) findViewById(R.id.all_demo);
 
-        Button btnMap = (Button) findViewById(R.id.btn_map);
-        btnMap.setOnClickListener(this);
+       for (int i = 0;i< view.getChildCount();i++) {
+           view.getChildAt(i).setOnClickListener(this);
+       }
 
-        Button btnMaterial = (Button) findViewById(R.id.btn_material);
-        btnMaterial.setOnClickListener(this);
-
-        Button btnThree = (Button) findViewById(R.id.btn_three);
-        btnThree.setOnClickListener(this);
-
-        Button btn4 = (Button) findViewById(R.id.btn_four);
-        btn4.setOnClickListener(this);
+//        Button btnMap = (Button) findViewById(R.id.btn_map);
+//        btnMap.setOnClickListener(this);
+//
+//        Button btnMaterial = (Button) findViewById(R.id.btn_material);
+//        btnMaterial.setOnClickListener(this);
+//
+//        Button btnThree = (Button) findViewById(R.id.btn_three);
+//        btnThree.setOnClickListener(this);
+//
+//        Button btn4 = (Button) findViewById(R.id.btn_four);
+//        btn4.setOnClickListener(this);
 
     }
 
-//    private void initView() {
-//            EasyFlowLayout flowLayout = (EasyFlowLayout) findViewById(R.id.flow);
-//        String[] listDatas2 = Constant.LIST_DATAS2;
-//
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-//        layoutParams.setMargins(5,5,5,5);
-//        for(int i = 0;i < listDatas2.length;i++) {
-//            TextView tv = new TextView(this);
-//
-//            tv.setText(listDatas2[i]);
-//            tv.setTextSize(16);
-//            tv.setBackgroundResource(R.drawable.tv_bg);
-//
-//            flowLayout.addView(tv);
-//            tv.setLayoutParams(layoutParams);
-//        }
-//    }
 
 
     @Override
@@ -82,7 +56,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startActivity(intent1);
                 break;
             case R.id.btn_material :
-//                initMaterial();
                 Intent intent2 = new Intent(this,B_ScrollView_Parallax.class);
                 startActivity(intent2);
                 break;
@@ -94,10 +67,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 Intent intent4 = new Intent(this, D_ProgressDemo.class);
                 startActivity(intent4);
                 break;
+            case R.id.btn_five:
+                Intent intent5 = new Intent(this, E_RecyclerView_Stickiness.class);
+                startActivity(intent5);
+                break;
         }
     }
 
-    private void initMaterial() {
-
-    }
 }
