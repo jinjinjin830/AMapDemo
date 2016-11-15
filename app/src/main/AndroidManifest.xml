@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.auser.amapdemo">
+    package="com.example.auser.amapdemo">
 
 
     <!--允许程序打开网络套接字-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--允许程序设置内置sd卡的写权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--允许程序获取网络状态-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!--允许程序访问WiFi网络信息-->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--允许程序读写手机状态和身份-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!--用于访问GPS定位-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
 
@@ -24,38 +24,41 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="7fc9e0986b5b15784e5b6f9aa3b7f52b"/>
+            android:value="7fc9e0986b5b15784e5b6f9aa3b7f52b" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.A_AMap"
-            android:label="高德地图页面"/>
+            android:label="高德地图页面" />
 
         <activity
             android:name=".ui.B_ScrollView_Parallax"
-            android:label="ScrollView的视差效果"/>
+            android:label="ScrollView的视差效果" />
 
         <activity
             android:name=".ui.C_ListView_Parallax"
-            android:theme="@style/ImageTranslucentTheme"
-            android:label="ListView的视差效果"/>
+            android:label="ListView的视差效果"
+            android:theme="@style/ImageTranslucentTheme" />
 
-        <activity android:name=".ui.D_ProgressDemo"
-        android:theme="@style/ColorTranslucentTheme"
-        android:label="仿QQ上传图片的进度效果"/>
-        <activity android:name=".ui.E_RecyclerView_Stickiness"
-            android:label="RecyclerView与粘性控件"/>
-
+        <activity
+            android:name=".ui.D_ProgressDemo"
+            android:label="仿QQ上传图片的进度效果"
+            android:theme="@style/ColorTranslucentTheme" />
+        <activity
+            android:name=".ui.E_RecyclerView_Stickiness"
+            android:label="RecyclerView与粘性控件" />
+        <activity
+            android:name=".ui.F_TestDemo"
+            android:label="所有测试"></activity>
 
         <service android:name="com.amap.api.location.APSService"></service>
     </application>

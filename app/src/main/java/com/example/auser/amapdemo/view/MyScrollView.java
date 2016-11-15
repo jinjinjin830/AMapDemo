@@ -4,7 +4,6 @@ package com.example.auser.amapdemo.view;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
@@ -70,7 +69,7 @@ public class MyScrollView extends ScrollView {
             case MotionEvent.ACTION_DOWN:
                 ivHeader = (ImageView) findViewById(R.id.iv_c_header);
                 mOriginalHeight = ivHeader.getMeasuredHeight();
-                Log.d("Zxxxxx",ivHeader.getBottom()+"点击时");
+//                Log.d("Zxxxxx",ivHeader.getBottom()+"点击时");
 
                 mFm = (FrameLayout) findViewById(R.id.fr_user);
                 break;
@@ -92,10 +91,6 @@ public class MyScrollView extends ScrollView {
         return super.onTouchEvent(ev);
     }
 
-    public boolean a() {
-
-        return 0==0?true:false;
-    }
     /**
      * 还原头部高度
      */
@@ -118,31 +113,6 @@ public class MyScrollView extends ScrollView {
         animator.start();
     }
 
-
-    @Override
-    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        super.onScrollChanged(l, t, oldl, oldt);
-
-
-        Log.d("Zxxxxx","上:"+t);
-        Log.d("Zxxxxx","旧的上:"+oldt);
-//
-//        if(t>=160) {
-////            ViewGroup.LayoutParams layoutParams = mFm.getLayoutParams();
-////            layoutParams.width =ViewGroup.LayoutParams.MATCH_PARENT;
-////            layoutParams.height = 80;
-////            mFm.setLayoutParams(layoutParams);
-//
-//
-//
-//
-//            FrameLayout.LayoutParams param = (LayoutParams) ivHeader.getLayoutParams();
-//            param.height = 80;
-//            param.width =ViewGroup.LayoutParams.MATCH_PARENT;
-//            param.topMargin =160;
-//            ivHeader.setLayoutParams(param);
-//        }
-    }
 
 
     private OverScroller mScroller;

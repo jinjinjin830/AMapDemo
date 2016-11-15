@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/e_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/e_layout_stickiness_tv"
+        android:visibility="invisible"
+        android:background="#FF0000"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        android:text="我是一个粘性控件"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</FrameLayout>

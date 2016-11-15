@@ -11,6 +11,7 @@ import com.example.auser.amapdemo.ui.B_ScrollView_Parallax;
 import com.example.auser.amapdemo.ui.C_ListView_Parallax;
 import com.example.auser.amapdemo.ui.D_ProgressDemo;
 import com.example.auser.amapdemo.ui.E_RecyclerView_Stickiness;
+import com.example.auser.amapdemo.ui.F_TestDemo;
 
 /**
  * 实现思路:
@@ -70,6 +71,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.btn_five:
                 Intent intent5 = new Intent(this, E_RecyclerView_Stickiness.class);
                 startActivity(intent5);
+                break;
+            case R.id.btn_six:
+                Intent intent6 = new Intent(this, F_TestDemo.class);
+                startActivity(intent6);
                 break;
         }
     }

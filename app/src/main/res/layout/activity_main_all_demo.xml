@@ -35,5 +35,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="E_RecyclerView与粘性控件"/>
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="F_测试Demo"/>
 
 </LinearLayout>

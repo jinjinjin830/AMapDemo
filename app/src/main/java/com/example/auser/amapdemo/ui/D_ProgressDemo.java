@@ -14,7 +14,6 @@ import com.example.auser.amapdemo.view.ProcessImageView;
  */
 
 public class D_ProgressDemo extends Activity{
-
     ProcessImageView processImageView =null;
 
     private final int SUCCESS=0;
@@ -27,7 +26,6 @@ public class D_ProgressDemo extends Activity{
             switch (msg.what) {
                 case SUCCESS:
                     Toast.makeText(D_ProgressDemo.this, "图片上传完成", Toast.LENGTH_SHORT).show();
-//                    processImageView.setVisibility(View.GONE);
                     break;
             }
         }
@@ -37,7 +35,6 @@ public class D_ProgressDemo extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.d_progress_demo);
 
@@ -63,4 +60,5 @@ public class D_ProgressDemo extends Activity{
             }
         }).start();
     }
+
 }

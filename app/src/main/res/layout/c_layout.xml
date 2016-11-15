@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.auser.amapdemo.view.MyListView
+        android:id="@+id/c_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/recyclerview_head_height"
+            android:scaleType="centerCrop"
+            android:src="@drawable/header" />
+
+        <RelativeLayout
+            android:id="@+id/c_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:fitsSystemWindows="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:gravity="center_horizontal"
+                android:text="用户中心"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toolbar_height"
+                android:layout_alignParentRight="true"
+                android:text="编辑"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </FrameLayout>
+</FrameLayout>
+
