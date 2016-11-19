@@ -38,13 +38,27 @@ android {
 //            keyPassword '123456'
 //        }
 //    }
+
+    productFlavors {
+        wangdoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wangdoujia"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        anzhi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "anzhi"]
+        }
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
     compile files('libs/Amap_2DMap_V2.9.1_20160825.jar')
@@ -53,4 +67,7 @@ dependencies {
     compile files('libs/Volley.jar')
     compile 'com.android.support:design:25.0.0'
     compile 'com.jakewharton:butterknife:8.4.0'
+
+    //友盟多渠道打包和统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
