@@ -18,9 +18,16 @@ import java.util.Arrays;
 
 /**
  * Created by Zx on 2016/10/30.
+ * 大概的实现思路.
+ * 1.放大的效果请参照MyListView.
+ * 2.粘性控件的思路是:在最顶部事先藏了一个View(这个一开始是隐藏的),
+ *      然后ListView中也有一个和隐藏View一模一样的View(通过addHeader添加.)
+ *      通过监听滑动距离,控制这个事先隐藏的View的show和hide.
+ * 3.透明状态栏的思路是:
+ *      a.
  */
 
-public class C_ListView_Parallax extends Activity {
+public class C_ListView_Parallax extends Activity  {
     private MyListView listView;
     private ImageView paralaxView;
 
@@ -28,13 +35,12 @@ public class C_ListView_Parallax extends Activity {
 
     private SparseArray recordSp = new SparseArray(0);
     private int mCurrentfirstVisibleItem = 0;
-    private ImageView iv2;
-    int flag= 0;
 
 
+    private ImageView iv2;//这个就是事先隐藏的View
 
-    private boolean scrollFlag = false;// 标记是否滑动
-    private int lastVisibleItemPosition;// 标记上次滑动位置
+    int flag= 0;//标记位
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +83,6 @@ public class C_ListView_Parallax extends Activity {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-
             }
 
             @Override
@@ -88,14 +93,12 @@ public class C_ListView_Parallax extends Activity {
                 //图片的高度减去toolbar的高度
                 int showStickinessFlag = getResources().getDimensionPixelOffset(R.dimen.recyclerview_head_height) - toolbarHeight;
 
-                //TODO 该方法可以优化,减少调用次数
                 if (getScrollY() >= showStickinessFlag && showStickinessFlag >= 0) {
                     if(flag == 0) {
                         iv2.scrollBy(0,showStickinessFlag);
                         iv2.setVisibility(View.VISIBLE);
                         flag++;
                     }
-
                 } else {
                     //否则,将toolbarLayout设置为透明.
                     iv2.scrollTo(0,0);
@@ -138,4 +141,5 @@ public class C_ListView_Parallax extends Activity {
         int height = 0;
         int top = 0;
     }
+
 }

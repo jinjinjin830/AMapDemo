@@ -41,7 +41,7 @@
             android:label="高德地图页面" />
 
         <activity
-            android:name=".ui.B_ScrollView_Parallax"
+            android:name=".ui.B_ANR"
             android:label="ScrollView的视差效果" />
 
         <activity

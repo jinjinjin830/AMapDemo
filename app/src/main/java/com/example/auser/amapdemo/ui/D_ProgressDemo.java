@@ -36,7 +36,7 @@ public class D_ProgressDemo extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.d_progress_demo);
+        setContentView(R.layout.d_layout);
 
 
         processImageView=(ProcessImageView) findViewById(R.id.image);

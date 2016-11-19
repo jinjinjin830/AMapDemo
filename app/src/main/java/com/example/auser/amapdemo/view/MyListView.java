@@ -3,6 +3,7 @@ package com.example.auser.amapdemo.view;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -26,15 +27,17 @@ public class MyListView extends ListView {
 
     private int mOriginalHeight;
     float downY = 0;
-
+    Context context;
     public MyListView(Context context) {
         super(context);
+        this.context = context;
         mOriginalHeight=context.getResources().getDimensionPixelOffset(R.dimen.recyclerview_head_height);
     }
 
     public MyListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mOriginalHeight=context.getResources().getDimensionPixelOffset(R.dimen.recyclerview_head_height);
+        this.context = context;
     }
 
 
@@ -49,9 +52,10 @@ public class MyListView extends ListView {
         // 顶部到头往下拉时，改变头部ImageView的高度
         if (deltaY < 0 && isTouchEvent) {
             ViewGroup.LayoutParams param = ivHeader.getLayoutParams();
-
+            double maxHeight = context.getResources().getDimensionPixelOffset(R.dimen.recyclerview_head_height) * 1.5;
+            Log.d("Zxxxxx","最大高度:"+maxHeight);
             // 头部不能大于最大高度
-            if (param.height <= 400) {
+            if (param.height <= maxHeight) {
                 param.height = param.height + Math.abs(deltaY) / 2;
                 ivHeader.setLayoutParams(param);
             }
@@ -66,29 +70,6 @@ public class MyListView extends ListView {
     public boolean onTouchEvent(MotionEvent ev) {
 
         switch (ev.getAction()) {
-//
-//            case MotionEvent.ACTION_DOWN:
-//                downY =ev.getY();
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//
-//                Log.d("Zxxxxx", "downY:" + downY);
-//                float moveY = ev.getRawY();
-//                float offset = moveY - downY;
-//                Log.d("Zxxxxx","offset:"+offset);
-//
-//                if ((offset) < 0) {
-//                    // 头部高度发生了改变才需要执行回弹动画
-//                    if (ivHeader.getLayoutParams().height != mOriginalHeight) {
-//                        amimateUP();
-//                        Log.d("Zxxxxx", "调用方法没");
-//
-//                        downY = 0;
-//                        return true;
-//                    }
-//                }
-//                break;
-
             case MotionEvent.ACTION_UP:
 
                 // 头部高度发生了改变才需要执行回弹动画

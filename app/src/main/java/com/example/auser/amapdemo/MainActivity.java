@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.auser.amapdemo.ui.A_AMap;
-import com.example.auser.amapdemo.ui.B_ScrollView_Parallax;
+import com.example.auser.amapdemo.ui.B_ANR;
 import com.example.auser.amapdemo.ui.C_ListView_Parallax;
 import com.example.auser.amapdemo.ui.D_ProgressDemo;
 import com.example.auser.amapdemo.ui.E_RecyclerView_Stickiness;
@@ -33,17 +33,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
            view.getChildAt(i).setOnClickListener(this);
        }
 
-//        Button btnMap = (Button) findViewById(R.id.btn_map);
-//        btnMap.setOnClickListener(this);
-//
-//        Button btnMaterial = (Button) findViewById(R.id.btn_material);
-//        btnMaterial.setOnClickListener(this);
-//
-//        Button btnThree = (Button) findViewById(R.id.btn_three);
-//        btnThree.setOnClickListener(this);
-//
-//        Button btn4 = (Button) findViewById(R.id.btn_four);
-//        btn4.setOnClickListener(this);
 
     }
 
@@ -57,7 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startActivity(intent1);
                 break;
             case R.id.btn_material :
-                Intent intent2 = new Intent(this,B_ScrollView_Parallax.class);
+                Intent intent2 = new Intent(this,B_ANR.class);
                 startActivity(intent2);
                 break;
             case R.id.btn_three:

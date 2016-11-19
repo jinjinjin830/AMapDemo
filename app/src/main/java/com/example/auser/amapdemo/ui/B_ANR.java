@@ -9,10 +9,10 @@ import com.example.auser.amapdemo.R;
  * Created by Zx on 2016/10/28.
  */
 
-public class B_ScrollView_Parallax extends Activity {
+public class B_ANR extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.b_material_design);
+        setContentView(R.layout.b_layout);
     }
 }

@@ -16,7 +16,7 @@
         android:id="@+id/btn_material"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="B_材料设计"/>
+        android:text="B_ANR-崩溃处理"/>
 
     <Button
         android:id="@+id/btn_three"

@@ -31,7 +31,7 @@ public class A_AMap extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_amap);
+        setContentView(R.layout.a_layout);
 
 
                 //获取地图控件引用
@@ -90,8 +90,6 @@ public class A_AMap extends Activity {
         mLocationClient.setLocationOption(mLocationOption);
         //启动定位
         mLocationClient.startLocation();
-
-
     }
 
     @Override

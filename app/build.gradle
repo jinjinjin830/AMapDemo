@@ -23,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
         debug {
             signingConfig signingConfigs.config
@@ -50,7 +51,6 @@ dependencies {
     compile files('libs/AMap_Location_V2.4.1_20160414.jar')
     compile files('libs/AMap_Search_V3.5.0_20160927.jar')
     compile files('libs/Volley.jar')
-
     compile 'com.android.support:design:25.0.0'
     compile 'com.jakewharton:butterknife:8.4.0'
 }
