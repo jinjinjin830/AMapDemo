@@ -12,6 +12,7 @@ import com.example.auser.amapdemo.ui.C_ListView_Parallax;
 import com.example.auser.amapdemo.ui.D_ProgressDemo;
 import com.example.auser.amapdemo.ui.E_RecyclerView_Stickiness;
 import com.example.auser.amapdemo.ui.F_TestDemo;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * 实现思路:
@@ -20,6 +21,17 @@ import com.example.auser.amapdemo.ui.F_TestDemo;
  *      Activity
  */
 public class MainActivity extends Activity implements View.OnClickListener{
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+
         switch (view.getId()){
+
             case R.id.btn_map :
                 Intent intent1 = new Intent(this, A_AMap.class);
                 startActivity(intent1);
@@ -65,6 +79,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 Intent intent6 = new Intent(this, F_TestDemo.class);
                 startActivity(intent6);
                 break;
+
         }
     }
 

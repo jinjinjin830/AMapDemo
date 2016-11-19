@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.example.auser.amapdemo.Constant;
 import com.example.auser.amapdemo.R;
 import com.example.auser.amapdemo.view.MyListView;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.Arrays;
 
@@ -41,6 +42,18 @@ public class C_ListView_Parallax extends Activity  {
 
     int flag= 0;//标记位
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
