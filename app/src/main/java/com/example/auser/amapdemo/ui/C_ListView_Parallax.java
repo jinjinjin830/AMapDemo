@@ -23,14 +23,13 @@ import java.util.Arrays;
  * 1.放大的效果请参照MyListView.
  * 2.粘性控件的思路是:在最顶部事先藏了一个View(这个一开始是隐藏的),
  *      然后ListView中也有一个和隐藏View一模一样的View(通过addHeader添加.)
- *      通过监听滑动距离,控制这个事先隐藏的View的show和hide.
+ *      通过监听ListView滑动距离,控制这个事先隐藏的View的show和hide.
  * 3.透明状态栏的思路是:
  *      a.
  */
 
 public class C_ListView_Parallax extends Activity  {
     private MyListView listView;
-    private ImageView paralaxView;
 
     int toolbarHeight;
 
@@ -38,7 +37,7 @@ public class C_ListView_Parallax extends Activity  {
     private int mCurrentfirstVisibleItem = 0;
 
 
-    private ImageView iv2;//这个就是事先隐藏的View
+    private ImageView stickView;//这个就是事先隐藏的View
 
     int flag= 0;//标记位
 
@@ -83,11 +82,8 @@ public class C_ListView_Parallax extends Activity  {
                 android.R.layout.simple_list_item_1,
                 Arrays.asList(Constant.LIST_DATAS2)));
         listView.setParalaxView(ivHeader);
-        //获取视差控件的ImageView,后面要用到.
-        paralaxView = (ImageView) ivHeader.findViewById(R.id.iv_c_header);
 
-        //将上一步的图片,局部抽取之后,设置为这个布局的背景,达到粘性效果.
-        iv2 = (ImageView) findViewById(R.id.iv2);
+        stickView = (ImageView) findViewById(R.id.stickView);
     }
 
 
@@ -108,20 +104,23 @@ public class C_ListView_Parallax extends Activity  {
 
                 if (getScrollY() >= showStickinessFlag && showStickinessFlag >= 0) {
                     if(flag == 0) {
-                        iv2.scrollBy(0,showStickinessFlag);
-                        iv2.setVisibility(View.VISIBLE);
+                        stickView.scrollBy(0,showStickinessFlag);
+                        stickView.setVisibility(View.VISIBLE);
                         flag++;
                     }
                 } else {
                     //否则,将toolbarLayout设置为透明.
-                    iv2.scrollTo(0,0);
-                    iv2.setVisibility(View.INVISIBLE);
+                    stickView.scrollTo(0,0);
+                    stickView.setVisibility(View.INVISIBLE);
                     flag=0;
                 }
             }
         });
     }
 
+
+
+    //以下代码都是为了计算出ListView的滑动距离,与逻辑无关,而且存在Bug,建议使用RecyclerVIew.
     private void initMeasureScrollY(AbsListView view, int firstVisibleItem) {
         mCurrentfirstVisibleItem = firstVisibleItem;
         View firstView = view.getChildAt(0);
@@ -135,7 +134,6 @@ public class C_ListView_Parallax extends Activity  {
             recordSp.append(firstVisibleItem, itemRecord);
         }
     }
-
 
     private int getScrollY() {
         int height = 0;

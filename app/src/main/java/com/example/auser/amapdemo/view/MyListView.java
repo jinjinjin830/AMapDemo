@@ -28,6 +28,7 @@ public class MyListView extends ListView {
     private int mOriginalHeight;
     float downY = 0;
     Context context;
+
     public MyListView(Context context) {
         super(context);
         this.context = context;

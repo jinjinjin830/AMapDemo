@@ -41,5 +41,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="F_测试Demo"/>
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_seven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="G_RecyclerView视差效果"/>
+
+    <Button
+        android:id="@+id/btn_eight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="H_Navigation_BottomNavigationView "/>
 
 </LinearLayout>

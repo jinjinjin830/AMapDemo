@@ -41,12 +41,16 @@ public class ProcessImageView extends ImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(Color.parseColor("#70000000"));// 半透明
+        drawShade(canvas);
 
-        funtion1(canvas);
+        drawText(canvas);
+    }
 
-
+    /**
+     * 绘制文字
+     * @param canvas
+     */
+    private void drawText(Canvas canvas) {
         mPaint.setAntiAlias(true); // 去锯齿
         mPaint.setTextSize(30);//画笔大小
         mPaint.setColor(Color.parseColor("#FFFFFF"));//画笔颜色
@@ -66,7 +70,11 @@ public class ProcessImageView extends ImageView {
      * 绘制遮罩层,从左下角开始,根据进度,遮罩到右上角(全部遮罩)
      * @param canvas
      */
-    private void funtion1(Canvas canvas) {
+    private void drawShade(Canvas canvas) {
+
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(Color.parseColor("#70000000"));// 半透明
+
         //定义一个Path对象,封闭成一个三角形
         Path path1 = new Path();
         if(progress<=50) {

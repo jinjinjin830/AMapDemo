@@ -17,4 +17,11 @@
         android:text="我是一个粘性控件"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_gravity="bottom"
+        android:onClick="goTop"
+        android:text="置顶"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </FrameLayout>

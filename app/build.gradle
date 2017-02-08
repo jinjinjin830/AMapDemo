@@ -9,8 +9,8 @@ android {
             storePassword '123456'
         }
     }
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 24
+    buildToolsVersion '24.0.3'
     defaultConfig {
         applicationId "com.example.auser.amapdemo"
         minSdkVersion 19
@@ -54,20 +54,33 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
     compile files('libs/Amap_2DMap_V2.9.1_20160825.jar')
     compile files('libs/AMap_Location_V2.4.1_20160414.jar')
     compile files('libs/AMap_Search_V3.5.0_20160927.jar')
     compile files('libs/Volley.jar')
-    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:design:24.2.1'
     compile 'com.jakewharton:butterknife:8.4.0'
-
     //友盟多渠道打包和统计
     compile 'com.umeng.analytics:analytics:latest.integration'
+    //
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    //retrofit
+    compile 'com.google.code.gson:gson:2.6.2'
+    //Gson 库
+    //下面两个是RxJava 和RxAndroid
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //转换器，请求结果转换成Model
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    //配合Rxjava 使用
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //矢量图适配库
+    compile 'com.airbnb.android:lottie:1.0.1'
 }

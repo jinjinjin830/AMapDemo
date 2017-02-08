@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class E_RecyclerView_Stickiness extends Activity {
 
     private RecyclerView rv;
     int offset = 0;
+    private TextView stickiness_textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class E_RecyclerView_Stickiness extends Activity {
     }
 
     private void initStickiness() {
-        final TextView stickiness_TextView = (TextView) findViewById(R.id.e_layout_stickiness_tv);
+        stickiness_textView = (TextView) findViewById(R.id.e_layout_stickiness_tv);
 
         //滑动监听
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -51,13 +53,20 @@ public class E_RecyclerView_Stickiness extends Activity {
                 int headHeight = getResources().getDimensionPixelOffset(R.dimen.recyclerview_head_height);
 
                 offset+=dy;
-                //Log.d("Zxxxxx","offset"+offset);
+                Log.d("Zxxxxx","offset"+offset);
                 if(offset>headHeight) {
-                    stickiness_TextView.setVisibility(View.VISIBLE);
+                    stickiness_textView.setVisibility(View.VISIBLE);
                 }else {
-                    stickiness_TextView.setVisibility(View.INVISIBLE);
+                    stickiness_textView.setVisibility(View.INVISIBLE);
                 }
             }
         });
+    }
+
+
+    public void goTop(View v) {
+        offset=0;
+        stickiness_textView.setVisibility(View.INVISIBLE);
+        rv.scrollToPosition(0);
     }
 }

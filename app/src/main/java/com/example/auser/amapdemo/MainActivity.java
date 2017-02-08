@@ -3,6 +3,7 @@ package com.example.auser.amapdemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,26 +13,22 @@ import com.example.auser.amapdemo.ui.C_ListView_Parallax;
 import com.example.auser.amapdemo.ui.D_ProgressDemo;
 import com.example.auser.amapdemo.ui.E_RecyclerView_Stickiness;
 import com.example.auser.amapdemo.ui.F_TestDemo;
+import com.example.auser.amapdemo.ui.G_RecyclerView_Parallax_Stick;
 import com.umeng.analytics.MobclickAgent;
 
-/**
- * 实现思路:
- *      遮挡!将IV添加到LV的头布局中.在用相对布局或者帧布局将IV用include标签遮挡在LV的头部.
- *      然后,通过计算LV的滑动量,我们为这个include标签中的IV进行操作.
- *      Activity
- */
-public class MainActivity extends Activity implements View.OnClickListener{
-    @Override
-    protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
-    }
+import java.io.IOException;
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MobclickAgent.onPause(this);
-    }
+import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+
+public class MainActivity extends Activity implements View.OnClickListener{
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +42,43 @@ public class MainActivity extends Activity implements View.OnClickListener{
            view.getChildAt(i).setOnClickListener(this);
        }
 
-
+        retrofitTest();
     }
 
+//    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
+    public static final String BASE_URL = "http://172.16.1.50/web/client/tag/category/";
 
+    private void retrofitTest() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        builder.addInterceptor(logging);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(builder.build())
+                .baseUrl(BASE_URL)
+                .build();
+
+        //获取接口实例
+        MovieService  movieService = retrofit.create(MovieService.class);
+            Call<ResponseBody> call = movieService.getDatas("40379db889f9124819228947faaeb1f7", Long.decode("12"));
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    Log.d("ZX",response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.d("ZX","失败");
+            }
+        });
+    }
 
     @Override
     public void onClick(View view) {
@@ -79,8 +109,22 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 Intent intent6 = new Intent(this, F_TestDemo.class);
                 startActivity(intent6);
                 break;
-
+            case R.id.btn_seven:
+                Intent intent7 = new Intent(this, G_RecyclerView_Parallax_Stick.class);
+                startActivity(intent7);
+                break;
         }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
 }

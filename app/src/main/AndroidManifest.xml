@@ -67,6 +67,9 @@
             android:name=".ui.F_TestDemo"
             android:label="所有测试"></activity>
 
+        <activity android:name=".ui.G_RecyclerView_Parallax_Stick"
+            android:label="RecyclerView带视差与粘性效果"/>
+
         <service android:name="com.amap.api.location.APSService"></service>
     </application>
 
