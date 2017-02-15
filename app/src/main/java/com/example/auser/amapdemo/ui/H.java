@@ -9,7 +9,7 @@ import com.example.auser.amapdemo.R;
  * Created by Administrator on 2017/1/9.
  */
 
-public class H_ extends Activity {
+public class H extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

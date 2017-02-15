@@ -21,6 +21,7 @@
 
 
     <application
+        android:name=".ExampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -44,31 +45,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.A_AMap"
+            android:name=".ui.A"
             android:label="高德地图页面" />
 
         <activity
-            android:name=".ui.B_ANR"
+            android:name=".ui.B"
             android:label="ScrollView的视差效果" />
 
         <activity
-            android:name=".ui.C_ListView_Parallax"
+            android:name=".ui.C"
             android:label="ListView的视差效果"
             android:theme="@style/ImageTranslucentTheme" />
 
         <activity
-            android:name=".ui.D_ProgressDemo"
+            android:name=".ui.D"
             android:label="仿QQ上传图片的进度效果"
             android:theme="@style/ColorTranslucentTheme" />
         <activity
-            android:name=".ui.E_RecyclerView_Stickiness"
+            android:name=".ui.E"
             android:label="RecyclerView与粘性控件" />
         <activity
-            android:name=".ui.F_TestDemo"
+            android:name=".ui.F"
             android:label="所有测试"></activity>
-
-        <activity android:name=".ui.G_RecyclerView_Parallax_Stick"
+<activity android:name=".ui.H"/>
+        <activity android:name=".ui.G"
             android:label="RecyclerView带视差与粘性效果"/>
+        <activity android:name=".ui.I"
+            android:label="自定义倒计时控件"/>
 
         <service android:name="com.amap.api.location.APSService"></service>
     </application>

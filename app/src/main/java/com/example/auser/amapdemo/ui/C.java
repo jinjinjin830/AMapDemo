@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.example.auser.amapdemo.Constant;
+import com.example.auser.amapdemo.base.Constant;
 import com.example.auser.amapdemo.R;
 import com.example.auser.amapdemo.view.MyListView;
 import com.umeng.analytics.MobclickAgent;
@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 /**
  * Created by Zx on 2016/10/30.
+ *
  * 大概的实现思路.
  * 1.放大的效果请参照MyListView.
  * 2.粘性控件的思路是:在最顶部事先藏了一个View(这个一开始是隐藏的),
@@ -28,7 +29,7 @@ import java.util.Arrays;
  *      a.
  */
 
-public class C_ListView_Parallax extends Activity  {
+public class C extends Activity  {
     private MyListView listView;
 
     int toolbarHeight;

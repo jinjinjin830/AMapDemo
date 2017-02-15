@@ -17,7 +17,7 @@ import com.example.auser.amapdemo.view.MyRecyclerView;
  *  3.透明状态栏效果
  */
 
-public class G_RecyclerView_Parallax_Stick extends Activity {
+public class G extends Activity {
 
     private MyRecyclerView rv;
 

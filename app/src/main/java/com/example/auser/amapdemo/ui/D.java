@@ -11,9 +11,10 @@ import com.example.auser.amapdemo.view.ProcessImageView;
 
 /**
  * Created by Zx on 2016/11/9.
+ * 自定义图片上传进度控件Demo
  */
 
-public class D_ProgressDemo extends Activity{
+public class D extends Activity{
     ProcessImageView processImageView =null;
 
     private final int SUCCESS=0;
@@ -25,7 +26,7 @@ public class D_ProgressDemo extends Activity{
             super.handleMessage(msg);
             switch (msg.what) {
                 case SUCCESS:
-                    Toast.makeText(D_ProgressDemo.this, "图片上传完成", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(D.this, "图片上传完成", Toast.LENGTH_SHORT).show();
                     break;
             }
         }

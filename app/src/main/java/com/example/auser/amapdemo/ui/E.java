@@ -12,12 +12,16 @@ import com.example.auser.amapdemo.R;
 import com.example.auser.amapdemo.adapter.E_RecyclerView_Adapter;
 
 /**
+ *
+ * RecyclerView + Stickiness
+ *
  * Created by Zx on 2016/11/10.
+ *
  * 1.RecyclerView头布局和脚布局
  * 2.自定义粘性控件结合PopupWindow.
  */
 
-public class E_RecyclerView_Stickiness extends Activity {
+public class E extends Activity {
 
     private RecyclerView rv;
     int offset = 0;

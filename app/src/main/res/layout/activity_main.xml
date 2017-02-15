@@ -6,7 +6,12 @@
     android:id="@+id/fl_main_activity"
     >
 
-<include layout="@layout/activity_main_all_demo"
-    android:id="@+id/all_demo"/>
+<!--<include layout="@layout/activity_main_all_demo"-->
+    <!--android:id="@+id/all_demo"/>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_rv"/>
 
 </FrameLayout>

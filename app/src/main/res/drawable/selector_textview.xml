@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!--&lt;!&ndash;获得焦点时的图片背景&ndash;&gt;-->
+    <!--<item android:state_focused="true">-->
+        <!--<shape>-->
+            <!--&lt;!&ndash; 实心 &ndash;&gt;-->
+            <!--<solid android:color="#00ffff" />-->
+
+            <!--&lt;!&ndash; 圆角 &ndash;&gt;-->
+            <!--<corners android:radius="6dp" />-->
+
+        <!--</shape>-->
+    <!--</item>-->
+
+    <!--&lt;!&ndash;选中时的图片背景&ndash;&gt;-->
+    <!--<item android:state_selected="true">-->
+        <!--<shape>-->
+            <!--&lt;!&ndash; 实心 &ndash;&gt;-->
+            <!--<solid android:color="#00FF00" />-->
+
+            <!--&lt;!&ndash; 圆角 &ndash;&gt;-->
+            <!--<corners android:radius="6dp" />-->
+
+        <!--</shape>-->
+    <!--</item>-->
+
+    <!-- 没有焦点时的背景图片 -->
+    <item android:state_window_focused="false">
+        <shape>
+            <!-- 实心 -->
+            <solid android:color="#05FFFF00" />
+
+            <!-- 圆角 -->
+            <corners android:radius="6dp" />
+
+        </shape>
+
+    </item>
+
+    <!-- 触摸模式下单击时的背景图片-->
+    <item android:state_focused="false" android:state_pressed="true">
+        <shape>
+            <!-- 实心 -->
+            <solid android:color="#77777700" />
+            <!-- 圆角 -->
+            <corners android:radius="6dp" />
+
+        </shape>
+    </item>
+
+    <!-- 非触摸模式下获得焦点并单击时的背景图片 -->
+    <item android:state_focused="true" android:state_pressed="true">
+        <shape>
+            <!-- 实心 -->
+            <solid android:color="#00ffff" />
+            <!-- 圆角 -->
+            <corners android:radius="6dp" />
+
+        </shape>
+    </item>
+
+
+    <!-- 默认时的背景图片-->
+    <item>
+        <shape>
+            <!-- 实心 -->
+            <solid android:color="#7500ffff" />
+
+            <!-- 圆角 -->
+            <corners android:radius="10dp" />
+
+        </shape>
+
+    </item>
+
+</selector>

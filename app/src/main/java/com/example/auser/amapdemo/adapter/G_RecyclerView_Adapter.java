@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.auser.amapdemo.R;
 import com.example.auser.amapdemo.view.MyRecyclerView;
 
-import static com.example.auser.amapdemo.Constant.LIST_DATAS2;
+import static com.example.auser.amapdemo.base.Constant.LIST_DATAS2;
 
 /**
  * Created by Administrator on 2016/11/19.

@@ -10,9 +10,10 @@ import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Zx on 2016/10/28.
+ * ANR崩溃日志上传友盟
  */
 
-public class B_ANR extends Activity {
+public class B extends Activity {
 
     @Override
     protected void onResume() {

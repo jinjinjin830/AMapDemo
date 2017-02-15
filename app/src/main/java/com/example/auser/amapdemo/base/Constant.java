@@ -1,7 +1,42 @@
-package com.example.auser.amapdemo;
+package com.example.auser.amapdemo.base;
 
+
+import com.example.auser.amapdemo.ui.A;
+import com.example.auser.amapdemo.ui.B;
+import com.example.auser.amapdemo.ui.C;
+import com.example.auser.amapdemo.ui.D;
+import com.example.auser.amapdemo.ui.E;
+import com.example.auser.amapdemo.ui.F;
+import com.example.auser.amapdemo.ui.G;
+import com.example.auser.amapdemo.ui.H;
+import com.example.auser.amapdemo.ui.I;
 
 public class Constant {
+
+	public static final String[] ALL_DEMO_STRING = new String[] {
+			"A_高德地图",
+			"B_ANR-崩溃处理",
+			"C_LV视差效果",
+			"D_仿QQ图片上传进度条",
+			"E_RecyclerView与粘性控件",
+			"F_测试Demo",
+			"G_RecyclerView视差效果",
+			"H_Navigation_BottomNavigationView ",
+	};
+
+	public static final Class[] ALL_DEMO_CLASS = new Class[] {
+			A.class,
+			B.class,
+			C.class,
+			D.class,
+			E.class,
+			F.class,
+			G.class,
+			H.class,
+			I.class
+	};
+
+
 
 	/** 菜单列表数据 */
 	public static final String[] MENUS = new String[] {

@@ -20,9 +20,10 @@ import com.example.auser.amapdemo.R;
 
 /**
  * Created by Zx on 2016/10/28.
+ * 高德地图Demo
  */
 
-public class A_AMap extends Activity implements LocationSource, AMapLocationListener {
+public class A extends Activity implements LocationSource, AMapLocationListener {
 
     MapView mMapView = null;
 
