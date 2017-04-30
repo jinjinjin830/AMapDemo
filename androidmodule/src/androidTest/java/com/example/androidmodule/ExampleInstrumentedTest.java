@@ -1,9 +1,8 @@
-package com.example.auser.amapdemo;
+package com.example.androidmodule;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,10 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.auser.amapdemo", appContext.getPackageName());
-
-        System.out.println("==============");
-        System.out.println(UiUtils.getScreenWidth(appContext));
-        Log.d("aaa","bbb");
+        assertEquals("com.example.androidmodule.test", appContext.getPackageName());
     }
 }

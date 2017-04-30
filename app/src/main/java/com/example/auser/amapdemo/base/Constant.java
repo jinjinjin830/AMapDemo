@@ -20,8 +20,8 @@ public class Constant {
 			"D_仿QQ图片上传进度条",
 			"E_RecyclerView与粘性控件",
 			"F_测试Demo",
-			"G_RecyclerView视差效果",
-			"H_Navigation_BottomNavigationView ",
+			"G_RecyclerView侧滑删除",
+			"H_弹性ViewPager",
 	};
 
 	public static final Class[] ALL_DEMO_CLASS = new Class[] {

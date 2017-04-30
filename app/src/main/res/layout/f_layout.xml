@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-    <com.airbnb.lottie.LottieAnimationView
-        android:background="#FF0000"
-        android:id="@+id/animation_view"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        app:lottie_fileName="LoopPlayOnce.json"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true" />
+
+    <Button
+        android:id="@+id/btn_"
+        android:text="哈哈"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.auser.amapdemo;
+package com.example.androidmodule;
 
 import org.junit.Test;
 
@@ -13,11 +13,5 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
-        System.out.println("哈哈");
-    }
-    @Test
-    public void addition_isCorrect2() throws Exception {
-        assertEquals(4, 2 + 2);
-        System.out.println("哈哈2");
     }
 }
